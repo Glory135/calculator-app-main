@@ -59,7 +59,7 @@ function Key({ value }) {
           setScreen([]);
         } else if (value === "=") {
           try {
-            const answer = eval(ans);
+            const answer = Function("return " + ans);
             setAns(answer);
             setScreen(answer);
           } catch (err) {
