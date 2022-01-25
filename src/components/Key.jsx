@@ -14,7 +14,7 @@ function Key({ value }) {
     } else if (theme3 === true) {
       key = "key key3 del3";
     } else {
-      null;
+      key = "";
     }
   } else if (value === "RESET") {
     if (theme1 === true) {
@@ -24,7 +24,7 @@ function Key({ value }) {
     } else if (theme3 === true) {
       key = "key key3 reset reset3";
     } else {
-      null;
+      key = "";
     }
   } else if (value === "=") {
     if (theme1 === true) {
@@ -34,7 +34,7 @@ function Key({ value }) {
     } else if (theme3 === true) {
       key = "key key3 equal equal3";
     } else {
-      null;
+      key = "";
     }
   } else {
     if (theme1 === true) {
@@ -44,7 +44,7 @@ function Key({ value }) {
     } else if (theme3 === true) {
       key = "key key3";
     } else {
-      null;
+      key = "";
     }
   }
 
