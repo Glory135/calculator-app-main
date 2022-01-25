@@ -7,35 +7,35 @@ function Key({ value }) {
     useContext(Theme_context);
 
   if (value === "DEL") {
-    theme1
+    theme1 === true
       ? (key = "key key1 del1")
-      : theme2
+      : theme2 === true
       ? (key = "key key2 del2")
-      : theme3
+      : theme3 === true
       ? (key = "key key3 del3")
       : null;
   } else if (value === "RESET") {
-    theme1
+    theme1 === true
       ? (key = "key key1 reset reset1")
-      : theme2
+      : theme2 === true
       ? (key = "key key2 reset reset2")
-      : theme3
+      : theme3 === true
       ? (key = "key key3 reset reset3")
       : null;
   } else if (value === "=") {
-    theme1
+    theme1 === true
       ? (key = "key key1 equal equal1")
-      : theme2
+      : theme2 === true
       ? (key = "key key2 equal equal2")
-      : theme3
+      : theme3 === true
       ? (key = "key key3 equal equal3")
       : null;
   } else {
-    theme1
+    theme1 === true
       ? (key = "key key1")
-      : theme2
+      : theme2 === true
       ? (key = "key key2")
-      : theme3
+      : theme3 === true
       ? (key = "key key3")
       : null;
   }
