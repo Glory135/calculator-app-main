@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Theme_context } from "../App";
+import { ThemeContext } from "../App";
 import "../style.css";
 
 function Screen() {
   const { theme1, theme2, theme3, screen, ans, setAns } =
-    useContext(Theme_context);
+    useContext(ThemeContext);
   const arrshow = screen.toString();
   setAns(arrshow.replace(/,/g, ""));
   console.log(screen);

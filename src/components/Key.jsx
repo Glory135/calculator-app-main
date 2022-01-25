@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Theme_context } from "../App";
+import { ThemeContext } from "../App";
 
 function Key({ value }) {
   let key = "";
   const { theme1, theme2, theme3, screen, setScreen, ans, setAns } =
-    useContext(Theme_context);
+    useContext(ThemeContext);
 
   if (value === "DEL") {
     if (theme1 === true) {

@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { Theme_context } from "../App";
+import { ThemeContext } from "../App";
 
 function Top() {
   const { theme1, theme2, theme3, setTheme1, setTheme2, setTheme3 } =
-    useContext(Theme_context);
+    useContext(ThemeContext);
 
   const click1 = () => {
     setTheme1(true);

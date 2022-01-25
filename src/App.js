@@ -4,7 +4,7 @@ import Screen from "./components/Screen";
 import Key from "./components/Key";
 import "./style.css";
 
-export const Theme_context = React.createContext();
+export const ThemeContext = React.createContext();
 
 function App() {
   const [theme1, setTheme1] = useState(true);
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Theme_context.Provider
+      <ThemeContext.Provider
         value={{
           theme1,
           setTheme1,
@@ -85,7 +85,7 @@ function App() {
             <a href='https://www.frontendmentor.io/profile/Glory135'>Glory</a>.
           </div>
         </div>
-      </Theme_context.Provider>
+      </ThemeContext.Provider>
     </>
   );
 }
