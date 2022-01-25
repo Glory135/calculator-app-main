@@ -7,37 +7,45 @@ function Key({ value }) {
     useContext(Theme_context);
 
   if (value === "DEL") {
-    theme1 === true
-      ? (key = "key key1 del1")
-      : theme2 === true
-      ? (key = "key key2 del2")
-      : theme3 === true
-      ? (key = "key key3 del3")
-      : null;
+    if (theme1 === true) {
+      key = "key key1 del1";
+    } else if (theme2 === true) {
+      key = "key key2 del2";
+    } else if (theme3 === true) {
+      key = "key key3 del3";
+    } else {
+      null;
+    }
   } else if (value === "RESET") {
-    theme1 === true
-      ? (key = "key key1 reset reset1")
-      : theme2 === true
-      ? (key = "key key2 reset reset2")
-      : theme3 === true
-      ? (key = "key key3 reset reset3")
-      : null;
+    if (theme1 === true) {
+      key = "key key1 reset reset1";
+    } else if (theme2 === true) {
+      key = "key key2 reset reset2";
+    } else if (theme3 === true) {
+      key = "key key3 reset reset3";
+    } else {
+      null;
+    }
   } else if (value === "=") {
-    theme1 === true
-      ? (key = "key key1 equal equal1")
-      : theme2 === true
-      ? (key = "key key2 equal equal2")
-      : theme3 === true
-      ? (key = "key key3 equal equal3")
-      : null;
+    if (theme1 === true) {
+      key = "key key1 equal equal1";
+    } else if (theme2 === true) {
+      key = "key key2 equal equal2";
+    } else if (theme3 === true) {
+      key = "key key3 equal equal3";
+    } else {
+      null;
+    }
   } else {
-    theme1 === true
-      ? (key = "key key1")
-      : theme2 === true
-      ? (key = "key key2")
-      : theme3 === true
-      ? (key = "key key3")
-      : null;
+    if (theme1 === true) {
+      key = "key key1";
+    } else if (theme2 === true) {
+      key = "key key2";
+    } else if (theme3 === true) {
+      key = "key key3";
+    } else {
+      null;
+    }
   }
 
   return (
