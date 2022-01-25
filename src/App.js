@@ -81,7 +81,8 @@ function App() {
             <a href='https://www.frontendmentor.io?ref=challenge'>
               Frontend Mentor
             </a>
-            . Coded by <a href='#'>Glory</a>.
+            . Coded by{" "}
+            <a href='https://www.frontendmentor.io/profile/Glory135'>Glory</a>.
           </div>
         </div>
       </Theme_context.Provider>
