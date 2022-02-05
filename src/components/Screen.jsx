@@ -7,8 +7,7 @@ function Screen() {
     useContext(ThemeContext);
   const arrshow = screen.toString();
   setAns(arrshow.replace(/,/g, ""));
-  console.log(screen);
-  console.log(ans);
+
   return (
     <div>
       <h1
@@ -20,6 +19,7 @@ function Screen() {
             : theme3
             ? "hsl(268, 71%, 12%)"
             : null,
+          transition: "1s",
           color:
             ans && screen === "ERROR"
               ? "red"

@@ -38,6 +38,7 @@ function App() {
               : theme3
               ? "hsl(268, 75%, 9%)"
               : null,
+              transition:'1s'
           }}
           className='body'
         >
@@ -53,6 +54,7 @@ function App() {
                   : theme3
                   ? "#1E0836"
                   : null,
+              transition:'1s'
               }}
               className='keys'
             >

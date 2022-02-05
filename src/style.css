@@ -112,6 +112,7 @@
   font-size: 25px;
   font-weight: 800;
   cursor: pointer;
+  transition: 1s;
 }
 .key1 {
   color: hsl(225, 21%, 49%);

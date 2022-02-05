@@ -31,6 +31,7 @@ function Top() {
           : theme3
           ? " hsl(52, 100%, 62%)"
           : null,
+        transition: "1s",
       }}
     >
       <div className='top'>
@@ -58,23 +59,27 @@ function Top() {
                   : theme3
                   ? "#1E0836"
                   : null,
+                transition: "1s",
               }}
               className='theme-balls-container'
             >
               <div
                 onClick={click1}
+                style={{ transition: "1s" }}
                 className={
                   theme1 ? "theme-ball ball-1 active" : "theme-ball ball-1"
                 }
               ></div>
               <div
                 onClick={click2}
+                style={{ transition: "1s" }}
                 className={
                   theme2 ? "theme-ball ball-2 active" : "theme-ball ball-2"
                 }
               ></div>
               <div
                 onClick={click3}
+                style={{ transition: "1s" }}
                 className={
                   theme3 ? "theme-ball ball-3 active" : "theme-ball ball-3"
                 }

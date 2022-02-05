@@ -3,7 +3,7 @@ import { ThemeContext } from "../App";
 
 function Key({ value }) {
   let key = "";
-  const { theme1, theme2, theme3, screen, setScreen, ans, setAns } =
+  const { theme1, theme2, theme3, screen, setScreen } =
     useContext(ThemeContext);
 
   if (value === "DEL") {
@@ -51,30 +51,113 @@ function Key({ value }) {
   return (
     <button
       onClick={() => {
+        const newScreen = [...screen];
         if (value === "DEL") {
-          setAns("");
-          setScreen([]);
+          setScreen(screen.slice(0, screen.length - 1));
         } else if (value === "RESET") {
-          setAns("");
           setScreen([]);
-        } else if (value === "=") {
-          try {
-            const answer = Function("return " + ans);
-            setAns(answer);
-            setScreen(answer);
-          } catch (err) {
-            console.log(err);
-            setAns("ERROR!!");
-            setScreen("ERROR!!");
+        } else if (
+          value === "=" ||
+          value === "+" ||
+          value === "-" ||
+          value === "*" ||
+          value === "/"
+        ) {
+          if (value === "+") {
+            newScreen.push(value);
+            setScreen(newScreen);
+            const str = newScreen.toString().replace(/,/g, "");
+            const arr = str.split("+");
+            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
+            console.log(newArr);
+            if (newArr.length >= 2) {
+              if (screen.includes("+")) {
+                const answer = newArr[0] + newArr[1];
+                setScreen([answer, "+"]);
+              } else if (screen.includes("-")) {
+                const answer = newArr[0] - newArr[1];
+                setScreen([answer, "+"]);
+              } else if (screen.includes("*")) {
+                const answer = newArr[0] * newArr[1];
+                setScreen([answer, "+"]);
+              } else if (screen.includes("/")) {
+                const answer = newArr[0] / newArr[1];
+                setScreen([answer, "+"]);
+              }
+            }
+          } else if (value === "-") {
+            newScreen.push(value);
+            setScreen(newScreen);
+            const str = newScreen.toString().replace(/,/g, "");
+            const arr = str.split("-");
+            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
+            console.log(newArr);
+            if (newArr.length >= 2) {
+              if (screen.includes("+")) {
+                const answer = newArr[0] + newArr[1];
+                setScreen([answer, "-"]);
+              } else if (screen.includes("-")) {
+                const answer = newArr[0] - newArr[1];
+                setScreen([answer, "-"]);
+              } else if (screen.includes("*")) {
+                const answer = newArr[0] * newArr[1];
+                setScreen([answer, "-"]);
+              } else if (screen.includes("/")) {
+                const answer = newArr[0] / newArr[1];
+                setScreen([answer, "-"]);
+              }
+            }
+          } else if (value === "*") {
+            newScreen.push(value);
+            setScreen(newScreen);
+            const str = newScreen.toString().replace(/,/g, "");
+            const arr = str.split("*");
+            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
+            console.log(newArr);
+            if (newArr.length >= 2) {
+              if (screen.includes("+")) {
+                const answer = newArr[0] + newArr[1];
+                setScreen([answer, "*"]);
+              } else if (screen.includes("-")) {
+                const answer = newArr[0] - newArr[1];
+                setScreen([answer, "*"]);
+              } else if (screen.includes("*")) {
+                const answer = newArr[0] * newArr[1];
+                setScreen([answer, "*"]);
+              } else if (screen.includes("/")) {
+                const answer = newArr[0] / newArr[1];
+                setScreen([answer, "*"]);
+              }
+            }
+          } else if (value === "/") {
+            newScreen.push(value);
+            setScreen(newScreen);
+            const str = newScreen.toString().replace(/,/g, "");
+            const arr = str.split("/");
+            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
+            console.log(newArr);
+            if (newArr.length >= 2) {
+              if (screen.includes("+")) {
+                const answer = newArr[0] + newArr[1];
+                setScreen([answer, "/"]);
+              } else if (screen.includes("-")) {
+                const answer = newArr[0] - newArr[1];
+                setScreen([answer, "/"]);
+              } else if (screen.includes("*")) {
+                const answer = newArr[0] * newArr[1];
+                setScreen([answer, "/"]);
+              } else if (screen.includes("/")) {
+                const answer = newArr[0] / newArr[1];
+                setScreen([answer, "/"]);
+              }
+            }
           }
         } else {
           try {
-            const newScreen = [...screen];
             newScreen.push(value);
             setScreen(newScreen);
           } catch (err) {
             console.log(err);
-            setAns("ERROR!!");
             setScreen("ERROR!!");
           }
         }
