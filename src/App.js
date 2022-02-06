@@ -10,7 +10,6 @@ function App() {
   const [theme1, setTheme1] = useState(true);
   const [theme2, setTheme2] = useState(false);
   const [theme3, setTheme3] = useState(false);
-  const [ans, setAns] = useState("");
   const [screen, setScreen] = useState([]);
 
   return (
@@ -25,8 +24,6 @@ function App() {
           setTheme3,
           screen,
           setScreen,
-          ans,
-          setAns,
         }}
       >
         <div
@@ -38,7 +35,7 @@ function App() {
               : theme3
               ? "hsl(268, 75%, 9%)"
               : null,
-              transition:'1s'
+            transition: "1s",
           }}
           className='body'
         >
@@ -54,7 +51,7 @@ function App() {
                   : theme3
                   ? "#1E0836"
                   : null,
-              transition:'1s'
+                transition: "1s",
               }}
               className='keys'
             >

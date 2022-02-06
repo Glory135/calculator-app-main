@@ -3,10 +3,9 @@ import { ThemeContext } from "../App";
 import "../style.css";
 
 function Screen() {
-  const { theme1, theme2, theme3, screen, ans, setAns } =
-    useContext(ThemeContext);
+  const { theme1, theme2, theme3, screen } = useContext(ThemeContext);
   const arrshow = screen.toString();
-  setAns(arrshow.replace(/,/g, ""));
+  let ans = arrshow.replace(/,/g, "");
 
   return (
     <div>

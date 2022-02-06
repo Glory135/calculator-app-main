@@ -63,94 +63,82 @@ function Key({ value }) {
           value === "*" ||
           value === "/"
         ) {
-          if (value === "+") {
-            newScreen.push(value);
-            setScreen(newScreen);
+          try {
             const str = newScreen.toString().replace(/,/g, "");
-            const arr = str.split("+");
-            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
-            console.log(newArr);
-            if (newArr.length >= 2) {
+            let arr = [];
+            if (str.includes("+")) {
+              arr = str.split("+");
+            } else if (str.includes("-")) {
+              arr = str.split("-");
+            } else if (str.includes("*")) {
+              arr = str.split("*");
+            } else if (str.includes("/")) {
+              arr = str.split("/");
+            } else {
+              console.log("error");
+            }
+            if (arr.length >= 2) {
+              const newArr = arr.map((i) => parseInt(i));
               if (screen.includes("+")) {
                 const answer = newArr[0] + newArr[1];
-                setScreen([answer, "+"]);
+                if (value === "+") {
+                  setScreen([answer, "+"]);
+                } else if (value === "-") {
+                  setScreen([answer, "-"]);
+                } else if (value === "*") {
+                  setScreen([answer, "*"]);
+                } else if (value === "/") {
+                  setScreen([answer, "/"]);
+                } else {
+                  setScreen([answer]);
+                }
               } else if (screen.includes("-")) {
                 const answer = newArr[0] - newArr[1];
-                setScreen([answer, "+"]);
+                if (value === "+") {
+                  setScreen([answer, "+"]);
+                } else if (value === "-") {
+                  setScreen([answer, "-"]);
+                } else if (value === "*") {
+                  setScreen([answer, "*"]);
+                } else if (value === "/") {
+                  setScreen([answer, "/"]);
+                } else {
+                  setScreen([answer]);
+                }
               } else if (screen.includes("*")) {
                 const answer = newArr[0] * newArr[1];
-                setScreen([answer, "+"]);
+                if (value === "+") {
+                  setScreen([answer, "+"]);
+                } else if (value === "-") {
+                  setScreen([answer, "-"]);
+                } else if (value === "*") {
+                  setScreen([answer, "*"]);
+                } else if (value === "/") {
+                  setScreen([answer, "/"]);
+                } else {
+                  setScreen([answer]);
+                }
               } else if (screen.includes("/")) {
                 const answer = newArr[0] / newArr[1];
-                setScreen([answer, "+"]);
+                if (value === "+") {
+                  setScreen([answer, "+"]);
+                } else if (value === "-") {
+                  setScreen([answer, "-"]);
+                } else if (value === "*") {
+                  setScreen([answer, "*"]);
+                } else if (value === "/") {
+                  setScreen([answer, "/"]);
+                } else {
+                  setScreen([answer]);
+                }
               }
+            } else {
+              newScreen.push(value);
+              setScreen(newScreen);
             }
-          } else if (value === "-") {
-            newScreen.push(value);
-            setScreen(newScreen);
-            const str = newScreen.toString().replace(/,/g, "");
-            const arr = str.split("-");
-            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
-            console.log(newArr);
-            if (newArr.length >= 2) {
-              if (screen.includes("+")) {
-                const answer = newArr[0] + newArr[1];
-                setScreen([answer, "-"]);
-              } else if (screen.includes("-")) {
-                const answer = newArr[0] - newArr[1];
-                setScreen([answer, "-"]);
-              } else if (screen.includes("*")) {
-                const answer = newArr[0] * newArr[1];
-                setScreen([answer, "-"]);
-              } else if (screen.includes("/")) {
-                const answer = newArr[0] / newArr[1];
-                setScreen([answer, "-"]);
-              }
-            }
-          } else if (value === "*") {
-            newScreen.push(value);
-            setScreen(newScreen);
-            const str = newScreen.toString().replace(/,/g, "");
-            const arr = str.split("*");
-            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
-            console.log(newArr);
-            if (newArr.length >= 2) {
-              if (screen.includes("+")) {
-                const answer = newArr[0] + newArr[1];
-                setScreen([answer, "*"]);
-              } else if (screen.includes("-")) {
-                const answer = newArr[0] - newArr[1];
-                setScreen([answer, "*"]);
-              } else if (screen.includes("*")) {
-                const answer = newArr[0] * newArr[1];
-                setScreen([answer, "*"]);
-              } else if (screen.includes("/")) {
-                const answer = newArr[0] / newArr[1];
-                setScreen([answer, "*"]);
-              }
-            }
-          } else if (value === "/") {
-            newScreen.push(value);
-            setScreen(newScreen);
-            const str = newScreen.toString().replace(/,/g, "");
-            const arr = str.split("/");
-            const newArr = arr.map((i) => parseInt(i)).slice(0, arr.length - 1);
-            console.log(newArr);
-            if (newArr.length >= 2) {
-              if (screen.includes("+")) {
-                const answer = newArr[0] + newArr[1];
-                setScreen([answer, "/"]);
-              } else if (screen.includes("-")) {
-                const answer = newArr[0] - newArr[1];
-                setScreen([answer, "/"]);
-              } else if (screen.includes("*")) {
-                const answer = newArr[0] * newArr[1];
-                setScreen([answer, "/"]);
-              } else if (screen.includes("/")) {
-                const answer = newArr[0] / newArr[1];
-                setScreen([answer, "/"]);
-              }
-            }
+          } catch (err) {
+            console.log(err);
+            setScreen("ERROR!!");
           }
         } else {
           try {
