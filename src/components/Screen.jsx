@@ -32,7 +32,7 @@ function Screen() {
         }}
         id='screen'
       >
-        {ans}
+        {ans !== '' ? ans : '0' }
       </h1>
     </div>
   );

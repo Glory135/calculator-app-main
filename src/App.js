@@ -26,7 +26,7 @@ function App() {
           setScreen,
         }}
       >
-        <div
+        <main
           style={{
             backgroundColor: theme1
               ? "hsl(222, 26%, 31%)"
@@ -39,7 +39,7 @@ function App() {
           }}
           className='body'
         >
-          <main className='container'>
+          <div className='container'>
             <Top />
             <Screen />
             <div
@@ -74,7 +74,7 @@ function App() {
               <Key value='RESET' />
               <Key value='=' />
             </div>
-          </main>
+          </div>
           <div className='attribution'>
             Challenge by{" "}
             <a href='https://www.frontendmentor.io?ref=challenge'>
@@ -83,7 +83,7 @@ function App() {
             . Coded by{" "}
             <a href='https://www.frontendmentor.io/profile/Glory135'>Glory</a>.
           </div>
-        </div>
+        </main>
       </ThemeContext.Provider>
     </>
   );
